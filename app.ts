@@ -34,3 +34,10 @@ function add(n1, n2){
 }
 let result = add(10, 20);
 console.log(result, "line-36 tut-2");
+
+function myName(a:string){
+    return a
+}
+
+const runName = myName("Dummy");
+console.log(runName)

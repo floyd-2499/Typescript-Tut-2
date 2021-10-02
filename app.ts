@@ -1,32 +1,41 @@
-let numData = 20;
-let strData = "hello";
-let booData = true;
+// object
 
-// type inference means you first do not define ..:number/:boolean/:string
-// but it auto-detects the type.....
-// further if you change num to bool... like
+const person1:object = {
+    name: 'Floyd Manuel',
+    age: 27,
+}
 
-// numData = false;
-// this shows error...
+console.log(person1);
+// console.log(person1.name);gives error cz you mentioned person as object
+// how to get? hmm...
+// so answer:-
 
-// but you can do this...
+const person2:{name:string, age:number, email:string} = {
+    name: 'Floyd Manuel',
+    age: 22,
+    email: "me@gmail.com"
+}
+console.log(person2 ,"- object")
+console.log(person2.name , "- name")
 
-let data;
-data = "abcd";
-data = true;
-data === 123;
-console.log(data)
+// what if you had many objects then???
+// like below
+const person3:{name:string, age:number, email:string} = {
+    name: 'Floyd Manuel',
+    age: 22,
+    email: "me@gmail.com"
+}
+// then try this...
 
-
-
-let me = 123; //you can change this 
-me = 234;
-
-// but if you
-let num: 5; //you cannot edit that. if you, it gives error.
-//  num= 10; //error
-// num = 5;  //no-error
-
-
-// Const
-const val = 10; //constant - cannot change 
+type objType = {name:string, age:number, email:string}
+// then you can directly use objType(any name)
+const person4:objType = {
+    name: 'Floyd Manuel',
+    age: 22,
+    email: "me@gmail.com"
+}
+const person5:objType = {
+    name: 'Prakash Manuel',
+    age: 18,
+    email: "Pakku@gmail.com"
+}

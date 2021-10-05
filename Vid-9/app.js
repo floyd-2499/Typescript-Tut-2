@@ -16,7 +16,7 @@ role[1] = "hello"; // it can pass
 // to push
 var role2 = ['admin', 'manager', 2, 5];
 role2.push(true);
-console.log(role2);
+// console.log(role2)
 // **********************************************************
 // Enum - vid-11
 // enum - gives number to every string/value 
@@ -27,9 +27,9 @@ var Role;
     Role[Role["read_only_user"] = 2] = "read_only_user";
 })(Role || (Role = {}));
 // this is used cz when you jus type Role for further reference it automatically pops up - Role.
-console.log(Role);
-console.log(Role.admin, "admin");
-console.log(Role.manager, "manager");
+// console.log(Role)
+// console.log(Role.admin, "admin")
+// console.log(Role.manager, "manager")
 // *********************************************************
 // ANY type in TypeScript
 // any means any kind of data type can come...
@@ -50,8 +50,25 @@ function combine(a, b) {
         return a.toString() + b.toString();
     }
 }
-console.log(combine(10, 20));
-console.log(combine("Floy", "Manuel"));
+// console.log(combine(10,20))
+// console.log(combine("Floy","Manuel"))
 // what is alternate???
 // use any???
 //  better use union  than any cz some benefits you won't receive in any.
+// ******************************************************************
+// Literal Type in TS
+// Actual type is written instead of union...  like
+var dataLt = "abc"; // but here you can only apply two types of values (string/number)
+//  if many numbers use literals
+// https://www.youtube.com/watch?v=hgtYclE95sc&t=1s  - check vid 14
+function combineMe(a, b, type) {
+    // return a+b  this shows error so try below
+    if (type === 'as-number') {
+        return (+a) + (+b);
+    }
+    else {
+        return a.toString() + b.toString();
+    }
+}
+console.log(combineMe(10, 20, "as-number"));
+console.log(combineMe("Floy", "Manuel", "as-string"));

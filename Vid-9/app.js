@@ -107,8 +107,49 @@ function add5() {
     return ab;
 }
 // ******************************************************************
-// Void 
+// Void - function
 // when a function is returning nothing it is void type function 
+var today;
 function printData() {
     console.log("hello brother");
+    today = new Date;
 } // this functions returns nothing so this is void type function
+// ******************************************************************
+// unknown type in TS
+// when you do not know the type of variable the you use unknown-type
+// we can also use any but unknown-type is better 
+// using any
+var myData;
+myData = 20;
+myData = "lol";
+// using unknown
+var myData2;
+myData2 = 50;
+myData2 = "lol";
+// now you see similarity in both above variables... 
+// check below
+var item;
+// item = myData;  //any - used and no error
+// item = myData2;  //unknown used and you get error 
+// cz item -type is string and you cannot pass myData2 cz it contains number also
+// it allows "any" cz nothing effects if any is used 
+// conclusion use unknown-type
+// for myData2 you use condition ... 
+if (typeof myData2 === "string") {
+    item = myData2;
+}
+// now TS is sure that it will assign only if myData2 is String-type
+// ******************************************************************
+// never Types in TS 
+// function which never returns anything
+// when a code gets a error it returns nothing - never types
+// the below function returns undefined when no return
+function tryReturn() {
+    // return true; //returns true - remove this line and check
+}
+console.log(tryReturn());
+// when in below if you don't write :never-type it'll run with void
+function apiError(msg, code) {
+    throw { msg: msg, code: code };
+}
+console.log(apiError("server side error", 5000));

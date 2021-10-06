@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typescript Tutorial</title>
+</head>
+<body>
+    <h1>TypeScript Tut-2 vid-23 and on ...</h1>
+    <p>Link : https://youtu.be/SH7-JgMkRPY</p>
+
+    <br>
+    <h2>rootDir and outDir</h2>
+    <span>This is used cz see when you compile a TS file its JS file is generated above TS file. <br>
+    <Strong>by using this you create a folder and all your JS files move to a specific file....</Strong>
+    </span>
+    <br>
+    <br>
+    <h4>How to work??</h4>
+    <ol>
+        <li>comment-out "outDir" from tsconfig.json file</li>
+        <li>"outDir" : "./fileName",  - name the file</li>
+    </ol>
+    <br>
+    <br><br>
+    <h2>Using rootDir</h2>
+    <span>To only specific folder/file to be compiled in other folder... use rootDir .  It specifies which directory to compile with outDir</span>
+    <br>
+    <h4>How to work??</h4>
+    <ol>
+        <li>comment-out "rootDir" from tsconfig.json file</li>
+        <li>"rootDir" : "./fileName",  - name the file only which you want to compile and whose js files to be appeared in outDir file</li>
+    </ol>
+
+    <h1>But....!!!</h1>
+    <h2>warning!!!... Error comes...</h2>
+
+    <span><Strong>Note</Strong> Either do include the exact file or exclude the rest files</span>
+    <br><br><br>
+    <span><Strong>Please Note</Strong>If comment-out "removeComment": true form tsconfig.js file all the commented msg from TS files wil not compile</span>
+
+    <script src="./myJSfiles/app.js"></script>
+    <script src="./myJSfiles/mywork.js"></script>
+</body>
+</html>
